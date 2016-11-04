@@ -8,14 +8,9 @@ from . import crawler, parser, gosms, settings
 app = Flask(__name__)
 
 
-def get_last_record():
-    batch = crawler.get()
-    return parser.parse(batch['records'][0])
-
-
 @app.route('/')
 def index():
-    return render_template('index.html', rec=get_last_record())
+    return render_template('index.html', rec=crawler.get_last_record())
 
 
 @app.route('/sms', methods=['POST'])
@@ -27,7 +22,7 @@ def sms():
     if not phone:
         return redirect(url_for('index'))
 
-    rec = get_last_record()
+    rec = crawler.get_last_record()
     msg = render_template('sms.txt', rec=rec)
     gosms.send(msg, recipients=phone)
 

@@ -9,7 +9,7 @@ from geopy.geocoders import Nominatim
 geolocator = Nominatim()
 
 
-def parse(record):
+def _parse(record):
     payload = record['payloadHex']
 
     b = bytes.fromhex(payload)
@@ -27,3 +27,10 @@ def parse(record):
     data['location'] = geolocator.reverse('{lrrLAT}, {lrrLON}'.format(**record))
 
     return data
+
+
+def parse(record):
+    try:
+        return _parse(record)
+    except IndexError:
+        return None
