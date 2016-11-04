@@ -31,9 +31,16 @@
         </table>
 
         <p>
-            <a href="{{ url_for('sms') }}" class="btn btn-lg btn-primary">
-                Send SMS
-            </a>
+            <form action="{{ url_for('sms') }}" method="POST">
+                <div class="form-group">
+                    <label for="phone">Phone number</label>
+                    <input type="text" class="form-control" id="phone"
+                           name="phone" placeholder="Phone number">
+                </div>
+                <button class="btn btn-primary">
+                    Send SMS
+                </button>
+            </form>
         </p>
     </div>
 </div>
