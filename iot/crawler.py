@@ -18,7 +18,11 @@ def get(dev_eui=getattr(settings, 'DEV_EUI', None),
 
 
 def get_last_record():
-    return parser.parse(get(limit=1)['records'][0])
+    batch = get(limit=settings.MAX_TRIES)
+    for rec_raw in batch['records']:
+        rec = parser.parse(rec_raw)
+        if rec:
+            return rec
 
 
 def get_many_records():
