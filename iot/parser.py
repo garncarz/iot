@@ -3,6 +3,10 @@
 # http://pripoj.me/wp-content/uploads/2016/08/PayloadDTH_FW0.2.3.pdf
 
 import dateutil.parser
+from geopy.geocoders import Nominatim
+
+
+geolocator = Nominatim()
 
 
 def parse(record):
@@ -18,5 +22,7 @@ def parse(record):
         data['temperature'] = -data['temperature']
 
     data['datetime'] = dateutil.parser.parse(record['createdAt'])
+
+    data['location'] = geolocator.reverse('{lrrLAT}, {lrrLON}'.format(**record))
 
     return data

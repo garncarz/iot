@@ -67,20 +67,23 @@ saved_records = [
 ]
 
 
-def test_parse_by_doc():
+def test_parse():
     data = parse({
-        'payloadHex': '2408200315143C1E00',
-        'createdAt': '2016-11-03T12:20:19+0000',  # extra
+        'payloadHex': '2408200315143C1E00',  # from documentation
+        'createdAt': '2016-11-03T12:20:19+0000',
+        'lrrLAT': 50.079845,
+        'lrrLON': 14.375819,
     })
     assert data['voltage'] == 3203  # mV
     assert data['temperature'] == 21.20  # °C
     assert data['humidity'] == 60.30  # %
     assert data['datetime'].replace(tzinfo=None) \
             == datetime(2016, 11, 3, 12, 20, 19)
+    assert 'Praha' in data['location'].address
 
 
 @pytest.mark.parametrize('record', saved_records)
-def test_parse(record):
+def test_parse_saved(record):
     data = parse(record)
     assert -20 < data['temperature'] < 50
     assert 5 < data['humidity'] < 90
