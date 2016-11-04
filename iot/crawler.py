@@ -1,3 +1,6 @@
+# REST API documentation:
+# http://pripoj.me/summer-jam-rest-api/
+
 from grab import Grab
 
 from . import settings

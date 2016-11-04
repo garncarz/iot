@@ -1,4 +1,5 @@
 # payload documentation:
+# http://pripoj.me/jak-spravne-pracovat-s-payloady-zprav/
 # http://pripoj.me/wp-content/uploads/2016/08/PayloadDTH_FW0.2.3.pdf
 
 
