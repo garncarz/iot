@@ -1,6 +1,7 @@
 grab
 numpy
 pandas
+python-dateutil
 python-lora
 scipy
 unidecode

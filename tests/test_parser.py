@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import pytest
 
 from iot.parser import parse
@@ -66,10 +68,15 @@ saved_records = [
 
 
 def test_parse_by_doc():
-    data = parse({'payloadHex': '2408200315143C1E00'})
+    data = parse({
+        'payloadHex': '2408200315143C1E00',
+        'createdAt': '2016-11-03T12:20:19+0000',  # extra
+    })
     assert data['voltage'] == 3203  # mV
     assert data['temperature'] == 21.20  # °C
     assert data['humidity'] == 60.30  # %
+    assert data['datetime'].replace(tzinfo=None) \
+            == datetime(2016, 11, 3, 12, 20, 19)
 
 
 @pytest.mark.parametrize('record', saved_records)

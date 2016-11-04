@@ -2,9 +2,12 @@
 # http://pripoj.me/jak-spravne-pracovat-s-payloady-zprav/
 # http://pripoj.me/wp-content/uploads/2016/08/PayloadDTH_FW0.2.3.pdf
 
+import dateutil.parser
+
 
 def parse(record):
     payload = record['payloadHex']
+
     b = bytes.fromhex(payload)
     data = {
         'voltage': b[2] * 100 + b[3],
@@ -13,4 +16,7 @@ def parse(record):
     }
     if b[8] & 1:
         data['temperature'] = -data['temperature']
+
+    data['datetime'] = dateutil.parser.parse(record['createdAt'])
+
     return data

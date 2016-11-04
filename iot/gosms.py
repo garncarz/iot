@@ -16,7 +16,7 @@ def squeeze(text):
 f_squeeze = squeeze
 
 
-def send(msg, recipients=getattr(settings, 'PHONE_DEST'), squeeze=True):
+def send(msg, recipients=getattr(settings, 'PHONE_DEST'), squeeze=False):
     g = Grab()
     resp_token = g.go(TOKEN_URL,
                       post={
