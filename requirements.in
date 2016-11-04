@@ -1,6 +1,7 @@
 flask
 geopy
 grab
+matplotlib
 numpy
 pandas
 python-dateutil
