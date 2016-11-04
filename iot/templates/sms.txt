@@ -1,0 +1,6 @@
+Sensor readings for {{ rec.devEUI }}:
+{{ rec.temperature }} °C,
+{{ rec.humidity }} % humidity,
+{{ rec.voltage }} mV battery
+@ {{ rec.location.address }}
+{{ rec.datetime }}
