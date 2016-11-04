@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sensor readings</title>
+    </head>
+
+    <body>
+        <h1>Sensor readings for {{ rec.devEUI }}</h1>
+        <table>
+            <tr>
+                <td>Temperature
+                <td>{{ rec.temperature }} °C
+            <tr>
+                <td>Humidity
+                <td>{{ rec.humidity }} %
+            <tr>
+                <td>Battery voltage
+                <td>{{ rec.voltage }} mV
+            <tr>
+                <td>Location
+                <td>{{ rec.location.address }}
+        </table>
+    </body>
+</html>

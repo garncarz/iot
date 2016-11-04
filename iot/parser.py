@@ -14,6 +14,7 @@ def parse(record):
 
     b = bytes.fromhex(payload)
     data = {
+        'devEUI': record['devEUI'],
         'voltage': b[2] * 100 + b[3],
         'temperature': b[4] + b[5] / 100.0,
         'humidity': b[6] + b[7] / 100.0,

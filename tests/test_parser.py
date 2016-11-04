@@ -70,6 +70,7 @@ saved_records = [
 def test_parse():
     data = parse({
         'payloadHex': '2408200315143C1E00',  # from documentation
+        'devEUI': 'random',
         'createdAt': '2016-11-03T12:20:19+0000',
         'lrrLAT': 50.079845,
         'lrrLON': 14.375819,
