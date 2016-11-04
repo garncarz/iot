@@ -33,6 +33,7 @@ selection==0.0.11         # via grab
 simplegeneric==0.8.1      # via ipython
 six==1.10.0               # via cryptography, grab, prompt-toolkit, python-dateutil, selection, traitlets, user-agent, weblib
 traitlets==4.3.1          # via ipython
+unidecode==0.4.19
 user-agent==0.1.5         # via grab, weblib
 wcwidth==0.1.7            # via prompt-toolkit
 weblib==0.1.20            # via grab, selection

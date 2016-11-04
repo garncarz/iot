@@ -3,6 +3,7 @@ numpy
 pandas
 python-lora
 scipy
+unidecode
 
 ipython
 pytest
