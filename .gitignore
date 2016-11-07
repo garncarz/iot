@@ -1,1 +1,4 @@
+.coverage
+htmlcov/
+
 settings_local.py

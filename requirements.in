@@ -11,3 +11,4 @@ unidecode
 
 ipython
 pytest
+pytest-cov

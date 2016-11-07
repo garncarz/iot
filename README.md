@@ -1,5 +1,8 @@
 # The Internet of Things project
 
+[![Build Status](https://travis-ci.org/garncarz/iot.svg?branch=master)](https://travis-ci.org/garncarz/iot)
+[![Coverage Status](https://coveralls.io/repos/github/garncarz/iot/badge.svg?branch=master)](https://coveralls.io/github/garncarz/iot?branch=master)
+
 Started at [a hackathon](http://pripoj.me/cra-iot-hackathon/) by [ČRa](https://www.radiokomunikace.cz/).
 If you have a LoRa sensor device with devEUI registered at [pripoj.me](http://pripoj.me/) with an access token,
 you can use this application to process the measured data.
