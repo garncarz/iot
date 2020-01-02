@@ -14,9 +14,9 @@ grab==0.6.30
 ipython-genutils==0.1.0   # via traitlets
 ipython==5.1.0
 itsdangerous==0.24        # via flask
-Jinja2==2.8               # via flask
+jinja2==2.8               # via flask
 lxml==3.6.4               # via grab, selection, weblib
-MarkupSafe==0.23          # via jinja2
+markupsafe==0.23          # via jinja2
 matplotlib==1.5.3
 numpy==1.11.2             # via matplotlib, pandas
 pandas==0.19.1
@@ -41,8 +41,4 @@ unidecode==0.4.19
 user-agent==0.1.5         # via grab, weblib
 wcwidth==0.1.7            # via prompt-toolkit
 weblib==0.1.20            # via grab, selection
-Werkzeug==0.11.11         # via flask
-
-# The following packages are commented out because they are
-# considered to be unsafe in a requirements file:
-# setuptools                # via ipython
+werkzeug==0.15.3          # via flask
